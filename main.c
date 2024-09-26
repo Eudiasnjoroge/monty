@@ -1,5 +1,4 @@
 #include "monty.h"
-
 void (*f)(stack_t **stack, unsigned int line_number);
 global_t vglo;
 

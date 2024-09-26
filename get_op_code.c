@@ -3,9 +3,9 @@
 /**
  * get_opcodes - function that selects the correct opcode to perform
  *
- * @opc: opcode passed
+ * @opc: opcode
  *
- * Return: pointer to the function that executes the opcode
+ * Return: pointer to the function
  */
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number)
 {
@@ -29,12 +29,13 @@ void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number)
 		{"queue", _queue},
 		{NULL, NULL}
 	};
-	int i;
+	int x;
 
-	for (i = 0; instruct[i].opcode; i++)
+	for (x = 0; instruct[x].opcode; x++)
 	{
-		if (_strcmp(instruct[i].opcode, opc) == 0)
+		if (_strcmp(instruct[x].opcode, opc) == 0)
 			break;
 	}
-	return (instruct[i].f);
+
+	return (instruct[x].f);
 }
